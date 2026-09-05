@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mock Interview Prep | Resume Templates</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #1a1a1a;
+    }
+    .resume-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .resume-template {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 350px;
+      flex: 1;
+    }
+    .resume-template header {
+      text-align: center;
+      border-bottom: 2px solid #4a6cf7;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+    .resume-template h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .resume-template h2 {
+      font-size: 1.1rem;
+      color: #2547c9;
+      border-bottom: 1px solid #cdd8fb;
+      margin-top: 1rem;
+      padding-bottom: 0.3rem;
+    }
+    .resume-template ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .resume-template ul li {
+      margin: 0.3rem 0;
+    }
+    /* Theme variations — unified blue accent, varied by tint/border weight */
+    .minimalist { font-family: 'Inter', sans-serif; border-color: #d6ddf5; }
+    .modern { background: #f0f4ff; border: 1px solid #4a6cf7; }
+    .creative { background: #f5f8ff; border: 1px solid #8b6cf7; }
+    .creative header { border-bottom-color: #8b6cf7; }
+    .creative h2 { color: #6a4fd6; border-bottom-color: #ded3fb; }
+
+    /* ===== Streak / Review widget (added) ===== */
+    .dash-wrap{
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+    .dash-row{
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 800px){
+      .dash-row{ grid-template-columns: 1fr; }
+    }
+    .dash-card{
+      background: #fff;
+      border: 1px solid #e2e4ea;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .dash-card h3{
+      margin: 0 0 2px;
+      font-size: 1rem;
+    }
+    .dash-card .sub{
+      font-size: 0.8rem;
+      color: #7a8095;
+      margin: 0 0 1.1rem;
+    }
+    .streak-top{
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .flame{
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(145deg, #eaf0ff, #e4ecff);
+      border: 1px solid #c3d2fb;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; flex-shrink: 0;
+    }
+    .streak-nums{ display: flex; gap: 22px; }
+    .streak-nums b{ font-size: 1.5rem; display: block; line-height: 1; color: #1a1a1a; }
+    .streak-nums span{ font-size: 0.65rem; color: #9096a8; letter-spacing: .04em; }
+
+    .heatmap{ display: flex; gap: 3px; overflow-x: auto; padding-bottom: 6px; }
+    .hcol{ display: flex; flex-direction: column; gap: 3px; }
+    .hcell{ width: 11px; height: 11px; border-radius: 3px; background: #eceef4; }
+    .l1{ background: rgba(74,108,247,0.20); }
+    .l2{ background: rgba(74,108,247,0.42); }
+    .l3{ background: rgba(74,108,247,0.68); }
+    .l4{ background: rgba(74,108,247,0.95); }
+    .legend{ display:flex; align-items:center; gap:6px; margin-top:8px; font-size:11px; color:#9096a8; }
+    .legend .hcell{ width:10px; height:10px; }
+
+    .goal-row{
+      display:flex; align-items:center; gap:12px;
+      margin-top:18px; padding-top:16px; border-top:1px solid #eceef4;
+    }
+    .goal-text{ flex:1; font-size:0.8rem; color:#5c6478; }
+    .goal-text b{ color:#1a1a1a; }
+    .goal-bar-bg{ flex:1; height:6px; border-radius:4px; background:#eceef4; overflow:hidden; }
+    .goal-bar-fill{ width:70%; height:100%; background: linear-gradient(90deg,#4a6cf7,#8b6cf7); }
+    .goal-count{ font-size:0.75rem; color:#9096a8; white-space:nowrap; }
+
+    .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+    .badge{
+      display:flex; align-items:center; gap:6px; font-size:0.72rem; color:#5c6478;
+      background:#f4f6fb; border:1px solid #e2e4ea; padding:5px 10px; border-radius:20px;
+    }
+
+    .review-item{ display:flex; align-items:center; gap:11px; padding:10px 0; border-bottom:1px solid #eceef4; }
+    .review-item:last-child{ border-bottom:none; }
+    .rdot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+    .rdot.due{ background:#2547c9; }
+    .rdot.soon{ background:#a9bbf9; }
+    .rtext{ flex:1; }
+    .rtext .t1{ font-size:0.8rem; font-weight:600; }
+    .rtext .t2{ font-size:0.7rem; color:#9096a8; margin-top:1px; }
+    .rbadge{ font-size:0.65rem; color:#7a8095; border:1px solid #e2e4ea; padding:2px 7px; border-radius:10px; }
+    .review-cta{
+      margin-top:14px; width:100%; text-align:center; font-size:0.8rem; font-weight:600;
+      color:#fff; background:#4a6cf7; padding:10px; border-radius:8px;
+    }
+
+    .section-heading{
+      max-width: 1100px;
+      margin: 2rem auto 0.75rem;
+      padding: 0 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- ✅ Streak / Review dashboard (added) -->
+  <div class="dash-wrap">
+    <div class="dash-row">
+      <div class="dash-card">
+        <h3>Practice streak</h3>
+        <p class="sub">Consecutive days with at least 5 questions answered</p>
+
+        <div class="streak-top">
+          <div class="flame">🔥</div>
+          <div class="streak-nums">
+            <div><b>14</b><span>DAY STREAK</span></div>
+            <div><b>32</b><span>LONGEST STREAK</span></div>
+            <div><b>412</b><span>TOTAL SESSIONS</span></div>
+          </div>
+        </div>
+
+        <div class="heatmap" id="heatmap"></div>
+        <div class="legend">
+          Less
+          <div class="hcell"></div><div class="hcell l1"></div><div class="hcell l2"></div><div class="hcell l3"></div><div class="hcell l4"></div>
+          More
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-text">Today's goal: <b>7 / 10</b> questions</div>
+          <div class="goal-bar-bg"><div class="goal-bar-fill"></div></div>
+          <div class="goal-count">3 to go</div>
+        </div>
+
+        <div class="badges">
+          <div class="badge">🏅 7-day club</div>
+          <div class="badge">🏅 Kubernetes verified</div>
+          <div class="badge">🏅 Top 10% — Kafka</div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h3>Due for review</h3>
+        <p class="sub">Missed questions resurfaced with spaced repetition</p>
+
+        <div class="review-item">
+          <div class="rdot due"></div>
+          <div class="rtext"><div class="t1">What is a Kafka consumer group?</div><div class="t2">Missed 3 days ago</div></div>
+          <div class="rbadge">Kafka</div>
+        </div>
+        <div class="review-item">
+          <div class="rdot due"></div>
+          <div class="rtext"><div class="t1">Explain Docker layer caching</div><div class="t2">Missed 1 day ago</div></div>
+          <div class="rbadge">Docker</div>
+        </div>
+        <div class="review-item">
+          <div class="rdot soon"></div>
+          <div class="rtext"><div class="t1">Difference between TCP and UDP</div><div class="t2">Due tomorrow</div></div>
+          <div class="rbadge">Networking</div>
+        </div>
+        <div class="review-item">
+          <div class="rdot soon"></div>
+          <div class="rtext"><div class="t1">What is eventual consistency?</div><div class="t2">Due in 2 days</div></div>
+          <div class="rbadge">Databases</div>
+        </div>
+
+        <div class="review-cta">Review 2 due now →</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-heading">Resume Templates</div>
+
+  <!-- ✅ Resume Gallery -->
+  <section class="resume-gallery">
+    <!-- Minimalist Resume -->
+    <div class="resume-template minimalist">
+      <header>
+        <h1>Jane Smith</h1>
+        <p>Data Analyst</p>
+        <p>📍 London | ✉️ jane@email.com</p>
+      </header>
+      <h2>Profile</h2>
+      <p>Detail-oriented analyst with 3+ years of experience in data visualization and reporting.</p>
+      <h2>Skills</h2>
+      <ul>
+        <li>Excel / Power BI</li>
+        <li>SQL / Python</li>
+        <li>Data Visualization</li>
+      </ul>
+      <h2>Experience</h2>
+      <p>Data Analyst — FinTech Ltd (2020–Present)</p>
+    </div>
+    <!-- Modern Resume -->
+    <div class="resume-template modern">
+      <header>
+        <h1>John Doe</h1>
+        <p>Software Engineer</p>
+        <p>📍 New York | ✉️ john@email.com</p>
+      </header>
+      <h2>Profile</h2>
+      <p>Full-stack developer passionate about scalable web apps and cloud solutions.</p>
+      <h2>Skills</h2>
+      <ul>
+        <li>JavaScript / React</li>
+        <li>Node.js / Express</li>
+        <li>AWS / Azure</li>
+      </ul>
+      <h2>Experience</h2>
+      <p>Senior Developer — TechCorp (2019–Present)</p>
+    </div>
+    <!-- Creative Resume -->
+    <div class="resume-template creative">
+      <header>
+        <h1>Emily Johnson</h1>
+        <p>Graphic Designer</p>
+        <p>📍 Toronto | ✉️ emily@email.com</p>
+      </header>
+      <h2>Profile</h2>
+      <p>Creative designer with expertise in branding, illustration, and digital media.</p>
+      <h2>Skills</h2>
+      <ul>
+        <li>Adobe Photoshop</li>
+        <li>Illustrator</li>
+        <li>UI/UX Design</li>
+      </ul>
+      <h2>Experience</h2>
+      <p>Lead Designer — Creative Studio (2018–Present)</p>
+    </div>
+  </section>
+
+  <script>
+    // generate a 20-week x 7-day heatmap, weighted toward an active streak in the last 2 weeks
+    const grid = document.getElementById('heatmap');
+    const weeks = 20;
+    for(let w=0; w<weeks; w++){
+      const col = document.createElement('div');
+      col.className = 'hcol';
+      for(let d=0; d<7; d++){
+        const cell = document.createElement('div');
+        let level = Math.random();
+        if(w >= weeks-2) level = 0.5 + Math.random()*0.5;
+        let cls = 'hcell';
+        if(level > 0.85) cls += ' l4';
+        else if(level > 0.65) cls += ' l3';
+        else if(level > 0.4) cls += ' l2';
+        else if(level > 0.2) cls += ' l1';
+        cell.className = cls;
+        col.appendChild(cell);
+      }
+      grid.appendChild(col);
+    }
+  </script>
+</body>
+</html>
